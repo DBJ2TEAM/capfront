@@ -3,7 +3,7 @@ import {Navigation} from '../molecules'
 
 export const Navbar: FC = () => (
     <Navigation 
-        title='동의대학교'
+        title='Dong-eui University'
         items={[
             {text:'Home', path:'/'},
             {text:'About us', path:'/'},
