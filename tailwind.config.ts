@@ -13,7 +13,7 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      color: {
+      colors: {
         'secondary' : '#159EEC',
         'primary' : '#1F2B6C',
         'accent' : '#BFD2F8',
@@ -21,13 +21,13 @@ const config: Config = {
         'white' : '#FCFEFE',
       },
       fontSize: {
-        'text-display' : '48px',
-        'text-display2' : '32px',
-        'text-bd' : '16px',
-        'text-bd2' : '18px',
-        'text-small' : '14px',
-        'text-caption' : '18px',
-        'text-title' : '26px',
+        'display' : '48px',
+        'display2' : '32px',
+        'bd' : '16px',
+        'bd2' : '18px',
+        'custom-small' : '14px',
+        'caption' : '18px',
+        'title' : '26px',
       },
     },
   },
