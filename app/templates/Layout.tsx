@@ -8,11 +8,10 @@ interface LayoutProps {
 
 export const Layout: FC<LayoutProps> = ({children}) => {
     return (
-        <>
+        <main>
             <Navbar />
-            <main>
-            </main>
-        </>
+            {children}
+        </main>
     )
 
 }
