@@ -1,4 +1,5 @@
 /** @jsxImportSource @emotion/react */
+import { StaticImageData } from "next/image";
 import { RESERVATIONITEM } from "./constant"
 import ItemCard from "./molecules/itemCard"
 import { Navbar } from "@/app/organisms";
@@ -16,7 +17,7 @@ export default function ReservationTemplate(){
           RESERVATIONITEM.map((item) => {
             return(
               <ItemCard
-                icon={item.icon}
+                icon={item.icon as StaticImageData}
                 item={item.title} 
                 key={item.id}
               />
