@@ -40,10 +40,10 @@ interface LoginResponse {
 
 const Main:React.FC = () => {
     return (
-        <Layout>
-            <Home></Home>
-            <Button onClick={handleLogin}>로그인입니다</Button>
-        </Layout>
+      <>
+        <Home></Home>
+        <Button onClick={handleLogin}>로그인입니다</Button>   
+      </>
     )
   }
 
