@@ -4,17 +4,17 @@ import Card from "@/app/molecules/Card"
 import Image from 'next/image'
 import ButtonColor from "@/app/molecules/ButtonColor"
 
-import deu from '@/app/assets/deu.png'
+import main from '@/app/assets/main.svg'
 
 const Home = () => {
     return (
         <Div>
-            <Div className="flex justify-center h-fullh items-center">
+            <Div className="flex justify-around h-fullh items-center">
                 <Div className="flex items-center flex-col">
                     <Title text="Dongeui University reservation service" className="w-96 font-normal text-primary"></Title>
                     <ButtonColor text="Login Let's go" className="w-44 h-11 mt-5"></ButtonColor>
                 </Div>
-                <Image src={deu} alt="DEU MAIN IMG" className=""></Image>
+                <Image src={main} alt="DEU MAIN IMG" className="h-fullh w-96"></Image>
             </Div>
             <Div className="flex justify-around items-center">
                 <Card color="bg-primary text-white" className="w-80 h-24 rounded-xl text-bd2" text="Book assignment"></Card>
