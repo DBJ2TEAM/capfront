@@ -1,3 +1,5 @@
 export * from './Navigation'
 export * from './ButtonColor'
 export * from './Card'
+export * from './Banner'
+export * from './BIcon'
