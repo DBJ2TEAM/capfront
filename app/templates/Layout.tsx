@@ -5,9 +5,10 @@ import Footer from "./Footer/Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
+  hideBanner?: boolean;
 }
 
-export const Layout: FC<LayoutProps> = ({ children }) => {
+export const Layout: FC<LayoutProps> = ({ children, hideBanner }) => {
   return (
     <>
       <Navbar />
