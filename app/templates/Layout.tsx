@@ -8,7 +8,7 @@ interface LayoutProps {
   hideBanner?: boolean;
 }
 
-export const Layout: FC<LayoutProps> = ({ children, hideBanner }) => {
+export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Navbar />

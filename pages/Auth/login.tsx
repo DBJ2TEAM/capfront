@@ -2,34 +2,39 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Button, Div } from "@/app/atoms";
 
+import { getServerUrl } from '@/app/utils/getServerUrl';
+import useAuthStore from '@/app/utils/useAuthStore';
+
+import { setCookie , deleteCookie} from 'cookies-next';
+
 export default function Login() {
-  const [token, setToken] = useState<string>(''); 
+  const { setToken, login, logout } = useAuthStore();
   const [username, setUsername] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
   const handleLogin = async () => {
-    try {
-      const response = await axios.post('로그인_요청_URL', {
-        username: username,
-        password: password,
-      });
-
-      const receivedToken = response.data.token;
-      localStorage.setItem('token', receivedToken);
-      setToken(receivedToken);
-    } catch (error) {
-      console.error('로그인 에러:', error);
-    }
-  };
-
-  const handleLogout = () => {
-    localStorage.removeItem('token');
-    setToken('');
-  };
+      try {
+        const response = await axios.post(getServerUrl('/login/'), {
+          username: username,
+          password: password,
+        });
+        console.log(response)
+        const receivedToken = response.data.access;
+        setCookie('token', receivedToken)
+        setToken(receivedToken);
+        login();
+      } catch (error) {
+        console.error('로그인 에러:', error);
+      }
+    };
+  
+    const handleLogout = () => {
+      deleteCookie('token')
+      logout();
+    };
 
   return (
     <Div className=''>
-      {!token ? (
         <Div className='flex flex-col items-center justify-center h-fullh'>
           <input
             type="text"
@@ -46,12 +51,8 @@ export default function Login() {
             className='w-96 p-3 border border-black'
           />
           <Button onClick={handleLogin} className='w-96 p-3 border border-black bg-primary text-white mt-9'>로그인</Button>
+
         </Div>
-      ) : (
-        <div>
-          <Button onClick={handleLogout}>로그아웃</Button>
-        </div>
-      )}
     </Div>
   )
 }

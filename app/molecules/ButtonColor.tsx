@@ -1,7 +1,7 @@
-import { Button } from "../atoms"
+import { Button, ButtonProps } from "../atoms"
 import { FC } from "react";
 
-interface ButtonColorProps {
+interface ButtonColorProps extends ButtonProps {
     text: string;
     className?: string;
 }
