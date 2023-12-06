@@ -1,11 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { StaticImageData } from "next/image";
-import { RESERVATIONITEM } from "./constant"
-import ItemCard from "./molecules/itemCard"
-import { Navbar } from "@/app/organisms";
+import { RESERVATIONITEM } from "../../app/templates/Resevation/constant"; 
+import ItemCard from "../../app/molecules/itemCard";
 import { Layout } from "@/app/templates/Layout";
 
-export default function ReservationTemplate(){
+export default function Select(){
   return(
     <Layout>
       <div css={mainLayout}>

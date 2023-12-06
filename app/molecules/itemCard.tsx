@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import useReservation from "../useReservation";
+import useReservation from "../templates/Resevation/useReservation";
 import Image, { StaticImageData } from 'next/image'
 
 interface PropsType {

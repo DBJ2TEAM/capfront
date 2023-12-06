@@ -4,22 +4,23 @@ export default function useReservation(title: string){
 
   const router = useRouter();
 
+
   const handleClick = () => {
-    console.log(title)
     switch(title){
       case "상담":
-        router.push('/another-page');
+        router.push("Reservation/Consulting")
 
+        break
       case "학과 기물":
-        router.push('/another-page');
-      
+        router.push("Reservation/Equipment")
+        break
       case "강의실":
-        router.push('/another-page');
+        router.push("Reservation/LectureRoom")
+        break
     }
-    
   };
 
   return{
-    handleClick
+    handleClick,
   }
 }
