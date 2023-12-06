@@ -4,7 +4,7 @@ import ItemCard from "./molecules/itemCard"
 import { Navbar } from "@/app/organisms";
 import { Layout } from "@/app/templates/Layout";
 
-export default function ReservationTemplate(){
+export default function Select(){
   return(
     <Layout>
       <div css={mainLayout}>
