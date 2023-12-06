@@ -8,18 +8,24 @@ import deu from "@/app/assets/deu.png"
 export interface ProfileProps {
     className?: string
     name: string
-    desc: string
+    department: string
+    phone: string
+    lab: string
+    email: string
 }
 
 
-export const Profile:FC<ProfileProps> = ({ name, desc, className:_className}) => {
+export const Profile:FC<ProfileProps> = ({ name, department, phone, lab, email ,className:_className}) => {
     const defaultClass = "flex flex-col justify-center items-center w-80 h-fullh"
     const className = [defaultClass, _className].join(' ')
     return (
         <Div className={className}>
             <Image src={deu} alt="DEU MAIN IMG" className=""></Image>
             <p>{name}</p>
-            <p>{desc}</p>
+            <p>{department}</p>
+            <p>{phone}</p>
+            <p>{lab}</p>
+            <p>{email}</p>
             <Div>
                 <BIcon name="Call"/>
                 <BIcon name="Email"/>
