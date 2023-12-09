@@ -5,6 +5,7 @@ import Footer from "./Footer/Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
+  hideBanner?: boolean;
 }
 
 export const Layout: FC<LayoutProps> = ({ children }) => {

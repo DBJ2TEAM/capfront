@@ -1,8 +1,58 @@
+import { useState } from 'react';
+import axios from 'axios';
+import { Button, Div } from "@/app/atoms";
+
+import { getServerUrl } from '@/app/utils/getServerUrl';
+import useAuthStore from '@/app/utils/useAuthStore';
+
+import { setCookie , deleteCookie} from 'cookies-next';
 
 export default function Login() {
+  const { setToken, login, logout } = useAuthStore();
+  const [username, setUsername] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+
+  const handleLogin = async () => {
+      try {
+        const response = await axios.post(getServerUrl('/login/'), {
+          username: username,
+          password: password,
+        });
+        console.log(response)
+        const receivedToken = response.data.access;
+        setCookie('token', receivedToken)
+        setToken(receivedToken);
+        login();
+      } catch (error) {
+        console.error('로그인 에러:', error);
+      }
+    };
+  
+    const handleLogout = () => {
+      deleteCookie('token')
+      logout();
+    };
+
   return (
-    <div className="flex flex-col min-h-screen bg-gray-100 border border-gray-300 shadow-xl rounded-xl">
-        로그인 페이지
-    </div>
+    <Div className=''>
+        <Div className='flex flex-col items-center justify-center h-fullh'>
+          <input
+            type="text"
+            placeholder="아이디"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className='w-96 p-3 border border-black mb-2'
+          />
+          <input
+            type="password"
+            placeholder="비밀번호"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className='w-96 p-3 border border-black'
+          />
+          <Button onClick={handleLogin} className='w-96 p-3 border border-black bg-primary text-white mt-9'>로그인</Button>
+
+        </Div>
+    </Div>
   )
 }
