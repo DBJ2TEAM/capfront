@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Button, ButtonProps, Div, Title } from "../atoms";
+import { Button, ButtonProps, Div } from "../atoms";
 
 export interface NavigationItemProps extends ButtonProps {
     path: string;
@@ -30,7 +30,7 @@ export const Navigation: FC<NavigationProps> = ({
     return (
         <nav className="bg-primary text-white">
             <Div className={className}>
-                <Title className="font-medium p-4" text={title} fontSize="text-display2"></Title>
+                <h1 className="text-display2 font-medium p-4">{title}</h1>
                 <Div>
                     {items.map((item)=> (
                         <NavigationItem key={item.path} {...item} className="p-4"/>

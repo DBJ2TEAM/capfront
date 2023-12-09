@@ -29,9 +29,6 @@ const config: Config = {
         'caption' : '18px',
         'title' : '26px',
       },
-      height: {
-        'fullh' : '550px',
-      }
     },
   },
   plugins: [],
