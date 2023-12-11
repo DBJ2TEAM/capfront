@@ -5,12 +5,13 @@ import Image, { StaticImageData } from 'next/image'
 interface PropsType {
   item: string;
   user: string;
+  token: string;
   icon: StaticImageData;
 }
 
-export default function ItemCard({item, icon, user}: PropsType){
+export default function ItemCard({item, icon, user, token}: PropsType){
 
-  const { handleClick } = useReservation({title:item, user})
+  const { handleClick } = useReservation({title:item, user, token})
 
   return(
     <div css={cardBorder} onClick={handleClick}>

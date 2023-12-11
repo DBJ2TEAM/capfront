@@ -6,9 +6,10 @@ import { getCookie } from "cookies-next";
 
 export default function Select(){
   const user: string = getCookie("role") || "";
+  const token = getCookie("token") || "";
 
   return(
-    <div>
+    <div className="h-fullh">
       <div css={mainLayout}>
       <div css={reservationTextStlye}>
         예약하기
@@ -22,6 +23,7 @@ export default function Select(){
                 item={item.title} 
                 user={user}
                 key={item.id}
+                token={token}
               />
             )
           })
