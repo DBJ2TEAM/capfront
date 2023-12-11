@@ -5,6 +5,7 @@ import ItemCard from "../../app/molecules/itemCard";
 import { Layout } from "@/app/templates/Layout";
 
 export default function Select(){
+  const user = 대충엑시오스 요청
   return(
     <div>
       <div css={mainLayout}>
@@ -18,6 +19,7 @@ export default function Select(){
               <ItemCard
                 icon={item.icon as StaticImageData}
                 item={item.title} 
+                user={user}
                 key={item.id}
               />
             )
