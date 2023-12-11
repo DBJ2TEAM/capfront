@@ -9,7 +9,7 @@ import useAuthStore from '@/app/types/utils/useAuthStore';
 const Home = () => {
     const isLoggedIn = useAuthStore((state) => state.isLoggedIn);
     const { logout } = useAuthStore();
-  
+    
     if(isLoggedIn){
         return (
             <Div>
@@ -27,8 +27,7 @@ const Home = () => {
                 </Div>
             </Div>
         )
-    }
-    else {
+    } else {
         return (
             <Div>
                 <Div className="flex justify-around h-fullh items-center">

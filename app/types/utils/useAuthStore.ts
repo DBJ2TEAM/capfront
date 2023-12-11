@@ -1,4 +1,4 @@
-import { getCookie } from 'cookies-next';
+import { deleteCookie, getCookie } from 'cookies-next';
 import {create} from 'zustand';
 
 interface AuthStore {
@@ -14,7 +14,11 @@ const useAuthStore = create<AuthStore>((set) => ({
   isLoggedIn: getCookie('token') ? true : false, 
   setToken: (newToken) => set({ token: newToken }), 
   login: () => set({ isLoggedIn: true }),
-  logout: () => set({ isLoggedIn: false, token: '' }), 
+  logout: () => {
+    deleteCookie('token')
+    deleteCookie('role')
+    set({ isLoggedIn: false, token: '' })
+  }, 
 }));
 
 export default useAuthStore;
