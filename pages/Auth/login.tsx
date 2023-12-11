@@ -2,8 +2,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import { Button, Div } from "@/app/atoms";
 
-import { getServerUrl } from '@/app/utils/getServerUrl';
-import useAuthStore from '@/app/utils/useAuthStore';
+import { getServerUrl } from '@/app/types/utils/getServerUrl';
+import useAuthStore from '@/app/types/utils/useAuthStore';
 
 import { setCookie , deleteCookie} from 'cookies-next';
 

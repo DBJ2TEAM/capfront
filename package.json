@@ -10,6 +10,7 @@
   },
   "dependencies": {
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -17,19 +18,20 @@
     "axios": "^1.6.2",
     "cookies-next": "^4.1.0",
     "js-cookie": "^3.0.5",
+=======
+    "axios": "^1.6.2",
+    "cookies-next": "^4.1.0",
+    "js-cookie": "^3.0.5",
+    "@emotion/react": "^11.11.1",
+    "emotion": "^11.0.0",
+    "jotai": "^2.5.1",
+>>>>>>> bcfbe52 ([fix] hotfix)
     "next": "14.0.2",
     "react": "^18",
     "react-cookie": "^6.1.1",
     "react-dom": "^18",
     "react-router-dom": "^6.19.0",
-    "zustand": "^4.4.7",
-    "@emotion/react": "^11.11.1",
-    "emotion": "^11.0.0"
-=======
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.2"
->>>>>>> 8fd6fb5 (Revert "Reservation")
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "typescript": "^5",

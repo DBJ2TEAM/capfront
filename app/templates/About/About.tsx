@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import { Div, Button } from "@/app/atoms";
 import { Profile,ProfileProps } from "@/app/organisms";
-import { getServerUrl } from "@/app/utils/getServerUrl";
+import { getServerUrl } from "@/app/types/utils/getServerUrl";
 import axios from "axios";
 
 export const About: FC = () => {
