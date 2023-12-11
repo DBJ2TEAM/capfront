@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { RESERVATIONITEM } from "./constant"
-import ItemCard from "./molecules/itemCard"
-import { Navbar } from "@/app/organisms";
+import { StaticImageData } from "next/image";
+import { RESERVATIONITEM } from "../../app/templates/Resevation/constant"; 
+import ItemCard from "../../app/molecules/itemCard";
 import { Layout } from "@/app/templates/Layout";
 
 export default function Select(){
   return(
-    <Layout>
+    <div>
       <div css={mainLayout}>
       <div css={reservationTextStlye}>
         예약하기
@@ -16,7 +16,7 @@ export default function Select(){
           RESERVATIONITEM.map((item) => {
             return(
               <ItemCard
-                icon={item.icon}
+                icon={item.icon as StaticImageData}
                 item={item.title} 
                 key={item.id}
               />
@@ -25,7 +25,7 @@ export default function Select(){
         }
       </div>
     </div>  
-    </Layout>
+    </div>
   )
 }
 
