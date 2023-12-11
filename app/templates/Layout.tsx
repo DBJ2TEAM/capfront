@@ -12,7 +12,6 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
       <Navbar />
-      <Banner />
       <main>{children}</main>
       <Footer />
     </>
