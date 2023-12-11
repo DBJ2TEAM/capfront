@@ -1,11 +1,7 @@
 import { FC } from "react";
-<<<<<<< HEAD
-import { Button, ButtonProps, Div } from "../atoms";
-=======
 import { Button, ButtonProps, Div, Title } from "../atoms";
 import Link from "next/link";
 import { LinkBtn } from "../atoms/Link";
->>>>>>> develop
 
 export interface NavigationItemProps extends ButtonProps {
     path: string;
