@@ -20,7 +20,9 @@ export default function Login() {
         });
         console.log(response)
         const receivedToken = response.data.access;
+        const role = response.data.role;
         setCookie('token', receivedToken)
+        setCookie('role', role)
         setToken(receivedToken);
         login();
       } catch (error) {

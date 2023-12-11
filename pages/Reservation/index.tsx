@@ -2,10 +2,11 @@
 import { StaticImageData } from "next/image";
 import { RESERVATIONITEM } from "../../app/templates/Resevation/constant"; 
 import ItemCard from "../../app/molecules/itemCard";
-import { Layout } from "@/app/templates/Layout";
+import { getCookie } from "cookies-next";
 
 export default function Select(){
-  const user = 대충엑시오스 요청
+  const user: string = getCookie("role") || "";
+
   return(
     <div>
       <div css={mainLayout}>
