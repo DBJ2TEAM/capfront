@@ -5,12 +5,13 @@ export type ReactButtonProps = DetailedHTMLProps<
   HTMLButtonElement
 >
 
-export type ButtonProps = ReactButtonProps & {}
+export type ButtonProps = ReactButtonProps & {
+}
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   className: _className,
   ...buttonProps
 }) => {
   const className = [_className].join(' ')
-  return <button {...buttonProps} className={className} />
+  return <button {...buttonProps} className={className}/>
 }
