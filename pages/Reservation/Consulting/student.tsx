@@ -23,7 +23,6 @@ export default function Consult(){
         <ContentModal content={() => { return <ReserveModal/>}}/>
         : null
       }
-      
     </div>
   )
 }
