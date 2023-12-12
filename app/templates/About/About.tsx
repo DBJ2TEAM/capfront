@@ -11,7 +11,6 @@ export const About: FC = () => {
   const handleProfile = async () => {
     try {
       const response = await axios.get(getServerUrl('/professors_list/'))
-      console.log(response.data)
       setProfessors(response.data)
     }
     catch (error){
@@ -23,7 +22,7 @@ export const About: FC = () => {
   }, []);
   return (
     <Div>
-      <Div className="flex justify-center items-center">
+      <Div className="flex justify-center items-center grid grid-cols-3">
         {professors.map((professor, index) => (
           <Profile
             key={index}

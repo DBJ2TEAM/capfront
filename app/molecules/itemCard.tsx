@@ -1,15 +1,22 @@
 /** @jsxImportSource @emotion/react */
+import useReservation from "../templates/Resevation/useReservation";
+import Image, { StaticImageData } from 'next/image'
 
 interface PropsType {
   item: string;
-  icon: string;
+  user: string;
+  token: string;
+  icon: StaticImageData;
 }
 
-export default function ItemCard({item, icon}: PropsType){
+export default function ItemCard({item, icon, user, token}: PropsType){
+
+  const { handleClick } = useReservation({title:item, user, token})
+
   return(
-    <div css={cardBorder}>
+    <div css={cardBorder} onClick={handleClick}>
       <div css={iconBox}>
-        <img src={icon}/>
+        <Image src={icon} alt="상담" css={image}/>
       </div>
       <div css={textBox}>
         {item}
@@ -38,6 +45,14 @@ const textBox = {
   alignItems: "center",
 }
 
+const image = {
+  width: "150px",
+  height: "150px",
+}
+
 const iconBox = {
   height: "90%",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
 }

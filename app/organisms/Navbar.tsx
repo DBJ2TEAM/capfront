@@ -10,7 +10,7 @@ export const Navbar: FC = () => {
         items={[
             {text:'Home', path:'/'},
             {text:'About us', path:'/About'},
-            {text:'Reserve', path:'/'},
+            {text:'Reserve', path:'/Reservation'},
             {text:'Contact', path:'/'},
         ]}
         className='flex justify-between items-center h-20'

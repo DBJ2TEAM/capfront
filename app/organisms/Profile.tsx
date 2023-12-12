@@ -16,7 +16,7 @@ export interface ProfileProps {
 
 
 export const Profile:FC<ProfileProps> = ({ name, department, phone, lab, email ,className:_className}) => {
-    const defaultClass = "flex flex-col justify-center items-center w-80 h-fullh"
+    const defaultClass = "flex flex-col justify-center items-center p-10 h-fullh"
     const className = [defaultClass, _className].join(' ')
     return (
         <Div className={className}>

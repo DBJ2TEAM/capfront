@@ -1,12 +1,15 @@
 /** @jsxImportSource @emotion/react */
-import { RESERVATIONITEM } from "./constant"
-import ItemCard from "./molecules/itemCard"
-import { Navbar } from "@/app/organisms";
-import { Layout } from "@/app/templates/Layout";
+import { StaticImageData } from "next/image";
+import { RESERVATIONITEM } from "../../app/templates/Resevation/constant"; 
+import ItemCard from "../../app/molecules/itemCard";
+import { getCookie } from "cookies-next";
 
 export default function Select(){
+  const user: string = getCookie("role") || "";
+  const token = getCookie("token") || "";
+
   return(
-    <Layout>
+    <div className="h-fullh">
       <div css={mainLayout}>
       <div css={reservationTextStlye}>
         예약하기
@@ -16,16 +19,18 @@ export default function Select(){
           RESERVATIONITEM.map((item) => {
             return(
               <ItemCard
-                icon={item.icon}
+                icon={item.icon as StaticImageData}
                 item={item.title} 
+                user={user}
                 key={item.id}
+                token={token}
               />
             )
           })
         }
       </div>
     </div>  
-    </Layout>
+    </div>
   )
 }
 
