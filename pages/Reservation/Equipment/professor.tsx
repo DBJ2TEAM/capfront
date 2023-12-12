@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import TimeTable from "@/app/organisms/Timetable/timeTable"
 import ContentModal from "@/app/molecules/Modal/ContentModal/ContentModal"
-import ReserveModal from "@/app/organisms/Timetable/ReserveModal/ReserveModal"
 import { contentModalAtom } from "@/app/molecules/Modal/ContentModal/ContentModalAtom"
 import { useAtomValue } from "jotai"
+import ApproveModal from "@/app/organisms/Timetable/ReserveModal/ApproveModal"
 
 export default function Consult(){
   const modalState = useAtomValue(contentModalAtom);
@@ -11,7 +11,7 @@ export default function Consult(){
   return(
     <div>
       <div>
-        장비 예약 페이지
+        장비 예약 관리 페이지
         <div css={timeTable}>
           <TimeTable
             title={"장비 예약"}
@@ -20,7 +20,11 @@ export default function Consult(){
       </div>
       {
         isModalOpen ?
-        <ContentModal content={() => { return <ReserveModal/>}}/>
+        <ContentModal content={() => { 
+          return (
+            <ApproveModal/>
+          )
+        }}/>
         : null
       }
       

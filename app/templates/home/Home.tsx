@@ -27,8 +27,8 @@ const Home = () => {
                     <Image src={main} alt="DEU MAIN IMG" className="h-fullh w-96"></Image>
                 </Div>
                 <Div className="flex justify-around items-center">
-                    <Card color="bg-primary text-white" className="w-80 h-24 rounded-xl text-bd2" text="About"></Card>
-                    <Card color="bg-accent text-black" className="w-80 h-24 rounded-xl text-bd2" text="Book assignment"></Card>
+                    <Card onClick={handleAbout} color="bg-primary text-white" className="w-80 h-24 rounded-xl text-bd2" text="About"></Card>
+                    <Card onClick={handleReserve} color="bg-accent text-black" className="w-80 h-24 rounded-xl text-bd2" text="Reservation"></Card>
                     <Card color="bg-secondary text-white" className="w-80 h-24 rounded-xl text-bd2" text="Book assignment"></Card>
                 </Div>
             </Div>
