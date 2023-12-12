@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import TimeTable from "@/app/organisms/Timetable/timeTable"
 import ContentModal from "@/app/molecules/Modal/ContentModal/ContentModal"
-import ReserveModal from "@/app/organisms/Timetable/ReserveModal/ReserveModal"
 import { contentModalAtom } from "@/app/molecules/Modal/ContentModal/ContentModalAtom"
 import { useAtomValue } from "jotai"
 import useReserveModal from "@/app/organisms/Timetable/ReserveModal/useReserveModal"
 import axios from "axios"
 import { getServerUrl } from "@/app/types/utils/getServerUrl"
 import { useEffect } from "react"
+
 import ApproveModal from "@/app/organisms/Timetable/ReserveModal/ApproveModal"
 
 export default function Consult(){
@@ -54,7 +54,7 @@ export default function Consult(){
   return(
     <div>
       <div>
-        장비 예약 페이지
+        장비 예약 관리 페이지
         <div css={timeTable}>
           <TimeTable
             title={"장비 예약"}

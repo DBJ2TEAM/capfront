@@ -81,6 +81,7 @@ export default function Consult(){
             title={"상담 관리"}
           />
         </div>
+        <Button onClick={handleAppointment}>예약 가능한 시간 만들기</Button>
       </div>
       {
         isModalOpen ?
