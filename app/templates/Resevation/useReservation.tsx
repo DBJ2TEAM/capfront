@@ -20,7 +20,7 @@ export default function useReservation({title, user, token}: PropsType){
         case "상담professor":
           router.push("Reservation/Consulting/professor")
           break
-        case "상담professor":
+        case "상담assistant":
             router.push("Reservation/Consulting/professor")
             break
   
@@ -30,7 +30,7 @@ export default function useReservation({title, user, token}: PropsType){
         case "학과 기물professor":
           router.push("Reservation/Equipment/professor")
           break
-        case "학과 기물professor":
+        case "학과 기물assistant":
           router.push("Reservation/Equipment/professor")
           break
   
@@ -40,7 +40,7 @@ export default function useReservation({title, user, token}: PropsType){
         case "강의실professor":
           router.push("Reservation/LectureRoom/professor")
           break
-        case "강의실professor":
+        case "강의실assistant":
           router.push("Reservation/LectureRoom/professor")
           break
       }
