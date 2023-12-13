@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
+import { useEffect } from "react";
 import useReserveModal from "./useReserveModal"
 
-export default function ReserveModal(){
+export default function ReserveModal({path, p_id}: {path?: string, p_id?: number}){
 
   const {
     dateState,
@@ -9,8 +10,12 @@ export default function ReserveModal(){
     timeState,
     setTimeState,
     handleModalOpen,
-  } = useReserveModal()
-
+    handleReserve,
+    setSelectedState,
+  } = useReserveModal({path, p_id})
+  useEffect(() => {
+    setSelectedState({date: dateState, time: timeState})
+  }, [])
   return(
     <div css={layout}>
       <div>
@@ -18,7 +23,7 @@ export default function ReserveModal(){
       </div>
       <div>
         <button 
-          onClick={handleModalOpen}
+          onClick={() => {handleModalOpen(); handleReserve()}}
         >확인</button>
       </div>
     </div>

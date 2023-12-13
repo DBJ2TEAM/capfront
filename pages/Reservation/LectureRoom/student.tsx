@@ -13,9 +13,9 @@ export default function Consult(){
       <div>
         강의실 예약 페이지
         <div css={timeTable}>
-          <TimeTable
+          {/* <TimeTable
             title={"강의실 예약"}
-          />
+          /> */}
         </div>
       </div>
       {
