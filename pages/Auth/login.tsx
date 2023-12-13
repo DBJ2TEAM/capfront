@@ -25,8 +25,10 @@ export default function Login() {
         console.log(response)
         const receivedToken = response.data.access;
         const role = response.data.role;
+        const id = response.data.id;
         setCookie('token', receivedToken)
         setCookie('role', role)
+        setCookie('professorId', id)
         setToken(receivedToken);
         login();
       } catch (error) {

@@ -17,6 +17,7 @@ const useAuthStore = create<AuthStore>((set) => ({
   logout: () => {
     deleteCookie('token')
     deleteCookie('role')
+    deleteCookie('professorId')
     set({ isLoggedIn: false, token: '' })
   }, 
 }));

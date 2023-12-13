@@ -1,4 +1,4 @@
-import { reservation } from "@/app/assets/icon"
+import reservation from "@/app/assets/icon"
 
 export const RESERVATIONITEM = [
   {
