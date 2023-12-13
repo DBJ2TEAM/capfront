@@ -19,7 +19,7 @@ interface EquipmentProps {
 
 export default function Consult() {
   const { dateState, setDateState, timeState, setTimeState, handleModalOpen } =
-    useReserveModal();
+    useReserveModal({});
 
   const [appointments, setAppointments] = useState<EquipmentProps[]>([]);
 

@@ -2,43 +2,43 @@
 
 export default function DateTransfer({date}: {date: string}){
   switch(date){
-    case "Monday":
+    case "monday":
       return(
         <div css={box}>
           월
         </div>
       )
-    case "Tuesday":
+    case "tuesday":
       return(
         <div css={box}>
           화
         </div>
       )
-    case "Wednesday":
+    case "wednesday":
       return(
         <div css={box}>
           수
         </div>
       )
-    case "Thursday":
+    case "thursday":
       return(
         <div css={box}>
           목
         </div>
       )
-    case "Friday":
+    case "friday":
       return(
         <div css={box}>
           금
         </div>
       )
-    case "Saturday":
+    case "saturday":
       return(
         <div css={box}>
           토
         </div>
       )
-    case "Sunday":
+    case "sunday":
       return(
         <div css={box}>
           일

@@ -19,7 +19,7 @@ export default function TimeTableProfessor({title}: PropsType){
     setDateState,
     setTimeState,
     handleModalOpen,
-  } = useReserveModal()
+  } = useReserveModal({})
   return(
     <div css={table}>
       <div>

@@ -4,15 +4,23 @@ import DateTransfer from "@/app/molecules/DateTransfer"
 import useReserveModal from "./ReserveModal/useReserveModal"
 
 interface PropsType{
-  title: string
+  title: string,
+  timeData?: Array<{
+    appointment_id: number,
+    student: number,
+    professor: number,
+    time: string,
+    day: string,
+    status: "APPROVED" | "REJECTED"
+  }>
 }
 
-export default function TimeTable({title}: PropsType){
+export default function TimeTable({title, timeData}: PropsType){
   const {
     setDateState,
     setTimeState,
     handleModalOpen,
-  } = useReserveModal()
+  } = useReserveModal({})
   return(
     <div css={table}>
       <div>
@@ -23,7 +31,7 @@ export default function TimeTable({title}: PropsType){
           {
             TIMELABLE.map((time: string) => {
               return(
-                <div css={box}>{time}</div>
+                <div css={box} key={time}>{time}</div>
               )
             })
           }
@@ -32,15 +40,16 @@ export default function TimeTable({title}: PropsType){
           {
             DAYOFTHEWEEK.map((date: string) => {
               return(
-                <div css={dateBox}>
+                <div css={dateBox} key={date}>
                   <DateTransfer date={date}/>
                   {
                     TIMELABLE.map((time: string) => {
-                      const isReserved = DUMMY_RESERVATION.find((reservation) => {
-                        return reservation.hasOwnProperty(date) && reservation[date] === time;
+                      const isReserved = timeData?.find((reservation) => {
+                        return (reservation.day === date) && (reservation.time === time)
                       });
                       const isTimeReserved = Boolean(isReserved);
-                      return <div 
+                      return <div
+                        key={time}
                         css={timeBox(isTimeReserved)}
                         onClick={() => {
                           if(!isTimeReserved){
