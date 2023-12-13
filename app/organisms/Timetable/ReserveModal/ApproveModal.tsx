@@ -11,7 +11,7 @@ export default function ApproveModal(){
     timeState,
     setTimeState,
     handleModalOpen,
-  } = useReserveModal()
+  } = useReserveModal({})
 
   const approveHandle = async () => {
     try {
