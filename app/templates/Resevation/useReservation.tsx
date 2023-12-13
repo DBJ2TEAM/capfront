@@ -14,7 +14,7 @@ export default function useReservation({title, user, token}: PropsType){
   const handleClick = () => {
     if(token) {
       switch(title+user){
-        case "상담학생":
+        case "상담student":
           router.push("Reservation/Consulting/student")
           break
         case "상담professor":
@@ -24,7 +24,7 @@ export default function useReservation({title, user, token}: PropsType){
             router.push("Reservation/Consulting/professor")
             break
   
-        case "학과 기물학생":
+        case "학과 기물student":
           router.push("Reservation/Equipment/student")
           break
         case "학과 기물professor":
@@ -34,7 +34,7 @@ export default function useReservation({title, user, token}: PropsType){
           router.push("Reservation/Equipment/professor")
           break
   
-        case "강의실학생":
+        case "강의실student":
           router.push("Reservation/LectureRoom/student")
           break
         case "강의실professor":

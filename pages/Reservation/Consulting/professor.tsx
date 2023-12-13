@@ -64,12 +64,12 @@ export default function Consult(){
   return(
     <Div className="flex flex-col items-center">
         <Div className="bg-primary w-96 h-fullh mt-10">
-          <Div className="grid-rows-2 p-5">
+          <Div className="p-5">
           <Title text="Shedule" className="text-accent"></Title>
-            <ul className="flex items-center justify-center text-white mt-5">
+            <ul>
               {appointments.map((appointment, index) => (
-                <li key={index}>
-                  <p>Day: {appointment.day}</p>
+                <li className="flex items-center justify-start text-white mt-5" key={index}>
+                  <p>Day: {appointment.day}, </p>
                   <p>Time: {appointment.time}</p>
                   <Div className="">
                     <Button onClick={() => handleApprove(appointment.appointment_id)} className="bg-accent text-primary w-10">승인</Button>
