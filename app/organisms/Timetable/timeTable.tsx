@@ -5,7 +5,7 @@ import useReserveModal from "./ReserveModal/useReserveModal"
 
 interface PropsType{
   title: string,
-  timeData: Array<{
+  timeData?: Array<{
     appointment_id: number,
     student: number,
     professor: number,
@@ -44,7 +44,7 @@ export default function TimeTable({title, timeData}: PropsType){
                   <DateTransfer date={date}/>
                   {
                     TIMELABLE.map((time: string) => {
-                      const isReserved = timeData.find((reservation) => {
+                      const isReserved = timeData?.find((reservation) => {
                         return (reservation.day === date) && (reservation.time === time)
                       });
                       const isTimeReserved = Boolean(isReserved);

@@ -60,7 +60,7 @@ export default function Consult(){
       </div>
       {
         isModalOpen ?
-        <ContentModal content={() => { return <ReserveModal path={`student-appointments`} p_id={selectedItem}/>}}/>
+        <ContentModal content={() => { return <ReserveModal path={`student-appointments/`} p_id={selectedItem}/>}}/>
         : null
       }
     </div>

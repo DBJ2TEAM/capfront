@@ -20,18 +20,19 @@ export default function useReserveModal({path, p_id}: {path?: string, p_id?: num
       isContentModalOpen: !prev.isContentModalOpen
     }))
   }
-  console.log(getCookie('id'))
+  console.log(getCookie('professorId'))
 
   const handleReserve = async () => {
     try {
+      const userId = getCookie('professorId')
       await axios.post(getServerUrl(`/${path}`), {
-        requester : getCookie('id'),
+        requester : userId,
         receiver: p_id,
         time: selectedState.time,
         day: selectedState.date,
         status : "REQUESTED"
       });
-      console.log("예약완료")
+      alert("예약 신청이 완료되었습니다.")
     } catch (error) {
       console.error('로그인 에러:', error);
     }
