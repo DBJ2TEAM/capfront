@@ -9,6 +9,7 @@ import { useEffect , useState,} from "react"
 import axios from "axios"
 import { getServerUrl } from "@/app/types/utils/getServerUrl"
 import { getCookie } from "cookies-next"
+import ButtonColor from "@/app/molecules/ButtonColor"
 
 interface AppointProps {
   day: string;
@@ -61,28 +62,30 @@ export default function Consult(){
   }
 
   return(
-    <div>
-      <div>
-        <Title text="상담 관리"></Title>
-        <Div className="w-96 h-fullh">
-          <ul>
-            {appointments.map((appointment, index) => (
-              <li key={index}>
-                <p>Date: {appointment.day}</p>
-                <p>Time: {appointment.time}</p>
-                <Button onClick={() => handleApprove(appointment.appointment_id)}>승인</Button>
-                <Button onClick={() => handleReject(appointment.appointment_id)}>거절</Button>
-              </li>
-            ))}
-          </ul>
+    <Div className="flex flex-col items-center">
+        <Div className="bg-primary w-96 h-fullh mt-10">
+          <Div className="grid-rows-2 p-5">
+          <Title text="Shedule" className="text-accent"></Title>
+            <ul className="flex items-center justify-center text-white mt-5">
+              {appointments.map((appointment, index) => (
+                <li key={index}>
+                  <p>Day: {appointment.day}</p>
+                  <p>Time: {appointment.time}</p>
+                  <Div className="">
+                    <Button onClick={() => handleApprove(appointment.appointment_id)} className="bg-accent text-primary w-10">승인</Button>
+                    <Button onClick={() => handleReject(appointment.appointment_id)} className="bg-secondary text-primary w-10">거절</Button>
+                  </Div>
+                </li>
+              ))}
+            </ul>
+          </Div>
+
         </Div>
-        <div css={timeTable}>
+        <Div className="flex w-full items-center justify-center">
           <TimeTable
             title={"상담 관리"}
           />
-        </div>
-        <Button onClick={handleAppointment}>예약 가능한 시간 만들기</Button>
-      </div>
+        </Div>
       {
         isModalOpen ?
         <ContentModal content={() => { 
@@ -93,12 +96,6 @@ export default function Consult(){
         : null
       }
       
-    </div>
+    </Div>
   )
-}
-
-const timeTable = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
 }
